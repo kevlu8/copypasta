@@ -18,7 +18,28 @@
   <a href="">
     <img src="https://www.codefactor.io/Content/badges/AMinus.svg">
   </a>
+  
+  <a href="https://discord.gg/9yYdwNHXVu">
+    <img src="https://img.shields.io/discord/883065350520991784?style=plastic">
+  </a>
  
+  <a href="">
+    <img src="https://img.shields.io/github/issues/kevlu8/copypasta">
+  </a>
+  
+  <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">
+    <img src="https://img.shields.io/github/license/kevlu8/copypasta">
+  </a>
+  
+  <a href="">
+    <img src="https://img.shields.io/github/stars/kevlu8/copypasta?style=social">
+  </a>
+  
+  <a href="">
+    <img src="https://img.shields.io/github/commit-activity/m/kevlu8/copypasta">
+  </a>
+  <br>
+ <div>
   
 
 CopyPasta#7051 (BOT) on Discord
