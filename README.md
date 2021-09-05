@@ -11,11 +11,11 @@
     <img src="https://img.shields.io/tokei/lines/github/kevlu8/copypasta" alt = "Lines of code">
   </a>
   
-  <a href="">
+  <a href="#">
     <img src="https://img.shields.io/github/languages/top/kevlu8/copypasta" alt = "Language">
   </a>
   
-  <a href="">
+  <a href="#">
     <img src="https://www.codefactor.io/Content/badges/AMinus.svg">
   </a>
   
@@ -23,7 +23,7 @@
     <img src="https://img.shields.io/discord/883065350520991784?style=plastic">
   </a>
  
-  <a href="">
+  <a href="#">
     <img src="https://img.shields.io/github/issues/kevlu8/copypasta">
   </a>
   
@@ -31,11 +31,11 @@
     <img src="https://img.shields.io/github/license/kevlu8/copypasta">
   </a>
   
-  <a href="">
+  <a href="#">
     <img src="https://img.shields.io/github/stars/kevlu8/copypasta?style=social">
   </a>
   
-  <a href="">
+  <a href="#">
     <img src="https://img.shields.io/github/commit-activity/m/kevlu8/copypasta">
   </a>
   <br>
