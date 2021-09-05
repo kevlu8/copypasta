@@ -39,6 +39,7 @@
     <img src="https://img.shields.io/github/commit-activity/m/kevlu8/copypasta">
   </a>
   <br>
+  <br>
 
 CopyPasta#7051 (BOT) on Discord
 
