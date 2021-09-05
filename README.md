@@ -10,6 +10,12 @@
   <a href="https://youtube.com/watch?v=dQw4w9WgXcQ">
     <img src="https://img.shields.io/tokei/lines/github/kevlu8/copypasta" alt = "Lines of code">
   </a>
+  
+  <a href="">
+    <img src="https://img.shields.io/github/languages/top/kevlu8/copypasta" alt = "Language">
+  </a>
+  
+  
  
   
 
