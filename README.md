@@ -1,4 +1,9 @@
-# CopyPasta
+<div align="center">
+  <br>
+  <strong><i>A fun copypasta bot for Discord.</i></strong>
+  <br>
+  <br>
+  
 
 CopyPasta#7051 (BOT) on Discord
 
