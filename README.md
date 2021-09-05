@@ -3,6 +3,10 @@
   <strong><i>A fun copypasta bot for Discord.</i></strong>
   <br>
   <br>
+    <a href="https://github.com/kevlu8/copypasta/">
+    <img src="https://img.shields.io/github/languages/code-size/kevlu8/copypasta" alt="Program Size">
+  </a>
+ 
   
 
 CopyPasta#7051 (BOT) on Discord
