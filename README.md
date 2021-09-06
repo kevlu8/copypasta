@@ -15,8 +15,8 @@
     <img src="https://img.shields.io/github/languages/top/kevlu8/copypasta" alt = "Language">
   </a>
   
-  <a href="#">
-    <img src="https://www.codefactor.io/Content/badges/AMinus.svg">
+  <a href="https://www.codefactor.io/repository/github/kevlu8/copypasta">
+    <img src="https://www.codefactor.io/repository/github/kevlu8/copypasta/badge" alt="CodeFactor">
   </a>
   
   <a href="https://discord.gg/9yYdwNHXVu">
