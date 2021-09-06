@@ -54,4 +54,6 @@ Following the belief that software should always be open source, here we are!
 
 ## What does it do?
 
-Gets a random top copypasta from today and sends it to the channel.
+Gets a random top copypasta from today and sends it to the channel. Prefix is ':'
+
+Also contains many other commands, find them with ':help'
