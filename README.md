@@ -19,6 +19,8 @@
     <img src="https://www.codefactor.io/repository/github/kevlu8/copypasta/badge" alt="CodeFactor">
   </a>
   
+  <br>
+  
   <a href="https://discord.gg/9yYdwNHXVu">
     <img src="https://img.shields.io/discord/883065350520991784?style=plastic">
   </a>
