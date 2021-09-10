@@ -57,3 +57,5 @@ Following the belief that software should always be open source, here we are!
 Gets a random top copypasta from today and sends it to the channel. Prefix is ':'
 
 Also contains many other commands, find them with ':help'
+
+Many extra copypastas/commands are disabled in non-nsfw channels.
