@@ -65,7 +65,7 @@ async def on_command_error(ctx, error):
       if kevlu8 == None:
         kevlu8 = guild.get_member_named("kevlu8#5240")
       try: 
-        await kevlu8.send(error + " when command " + ctx.message + " was run.")
+        await kevlu8.send(error + " when command " + str(ctx.message) + " was run.")
       except:
         splitatchar = 2000
         one, two = error[:splitatchar], error[splitatchar:]
@@ -79,7 +79,7 @@ async def on_command_error(ctx, error):
               await ctx.send(mid2)
             except:
               await kevlu8.send("Bro there's an error go check console")
-              raise(error)
+              # raise(error)
 
 dbl_token = os.environ['dbl_token']
 
@@ -120,7 +120,7 @@ async def profile(ctx):
       hasvoted = True
       await ctx.send("Hi, <@" + user + "> ! You have voted for CopyPasta " + votes + " times. Rewards are coming soon!")
   if not hasvoted:
-    await ctx.send("Hi, <@" + str(ctx.message.author.id) + "> ! You haven't voted for CopyPasta yet.")
+    await ctx.send("Hi, <@" + str(ctx.message.author.id) + "> ! You haven't voted for CopyPasta yet. If you have, we apologise, as currently the system is really, really, really broken.")
 
 @bot.command()
 async def nsfw(ctx):
@@ -176,7 +176,6 @@ async def copypasta(ctx):
     except:
         middle1, middle2 = right[:splitat], right[splitat:]
         try:
-          await ctx.send(left)
           await ctx.send(middle1)
           await ctx.send(middle2 + " (from " + post.url + ")")
         except:
