@@ -8,6 +8,7 @@ from discord.ext.commands import Bot
 from time import sleep
 
 os.system("pip install topggpy")
+
 import topgg
 
 print("Importing finished")
@@ -40,6 +41,10 @@ bot.string = "placeholder. if you're seeing this something seriously went wrong"
 @bot.event
 async def on_message(message):
     message.content = message.content.lower()
+    pingMaybe = message.content.replace(" ", "")
+    if pingMaybe == '<@882832904605020190>' or pingMaybe == "@CopyPasta#7051":
+      channel = message.channel 
+      await channel.send('fuck you, stop pinging me or i will start fucking swearing, if you want to know my prefix its : are you happy now')
     await bot.process_commands(message)
 
 kevlu8 = None
@@ -55,17 +60,20 @@ async def on_ready():
 
 @bot.event
 async def on_command_error(ctx, error):
-    if isinstance(error, commands.MissingRequiredArgument):
+    if isinstance(error, commands.CommandNotFound):
+        print("Command not found, skipping..")
+    elif isinstance(error, commands.MissingRequiredArgument):
         await ctx.send('Missing parameters! Run :help to see correct parameters. <:kek:789556121954025492> <:emoji_37:787733584542171196>')
     elif isinstance(error, commands.MissingPermissions):
         await ctx.send("You do not have permission to run this command. <:thonk:725866060166856764> <a:Supper:803963737622839316>")
     else:
+      error = str(error)
       guild = bot.get_guild(855275010556821524)
       kevlu8 = guild.get_member(458684594703695872)
       if kevlu8 == None:
         kevlu8 = guild.get_member_named("kevlu8#5240")
       try: 
-        await kevlu8.send(error + " when command " + str(ctx.message) + " was run.")
+        await kevlu8.send(error + " when command " + str(ctx.message.content) + " was run.")
       except:
         splitatchar = 2000
         one, two = error[:splitatchar], error[splitatchar:]
@@ -79,7 +87,7 @@ async def on_command_error(ctx, error):
               await ctx.send(mid2)
             except:
               await kevlu8.send("Bro there's an error go check console")
-              # raise(error)
+              print(error) # I can't use raise() or else the program stops
 
 dbl_token = os.environ['dbl_token']
 
@@ -107,7 +115,7 @@ async def on_dbl_vote(data):
 
 @bot.event
 async def on_dbl_test(data):
-    """An event that is called whenever someone tests the webhook system for your bot on Top.gg."""
+    # Vote test lol
     print(f"Received a test vote:\n{data}")
 
 @bot.command()
@@ -137,7 +145,7 @@ async def copypasta(ctx):
   else:
     bot.nsfwenabled = False
   try:
-          sub = reddit.subreddit('copypasta')
+          sub = reddit.subreddit("copypasta")
           limit = bot.amountToGet
           posts = sub.top("day", limit = limit)
           random_post_number = random.randint(0, limit)
@@ -165,6 +173,7 @@ async def copypasta(ctx):
           await kevlu8.send("Issue was found! Check to see if it was Reddit's end, or your end!")
           
   try: 
+    print(content)
     await ctx.send(content)
   except:
     print("too long! splitting...")
@@ -179,7 +188,7 @@ async def copypasta(ctx):
           await ctx.send(middle1)
           await ctx.send(middle2 + " (from " + post.url + ")")
         except:
-          await ctx.send("This post was way too long and we couldn't send it. Link: " + post.url)
+          await ctx.send("This post was way too long (over 6000 characters) and we couldn't send it. Link: " + post.url)
 
 @bot.command(pass_context=True)
 async def update(ctx):
@@ -209,7 +218,7 @@ async def invite(ctx):
 
 @bot.command()
 async def help(ctx):
-    embedVar = discord.Embed(title="Commands", description="", color=0x00ff00)
+    embedVar = discord.Embed(title="Commands", description="If you changed the prefix with :prefix, replace the : in all these with your prefix.", color=0x00ff00)
     embedVar.add_field(name=":help", value="Displays this help message!", inline=False)
     embedVar.add_field(name=":copypasta", value="Sends a random copypasta from top", inline=False)
     embedVar.add_field(name = ":invite", value = "DMs you the link to invite CopyPasta to your server!")
@@ -219,7 +228,8 @@ async def help(ctx):
     embedVar.add_field(name = ":vote", value = "Feeling generous and want to support the bot? Vote for it by running this command!")
     embedVar.add_field(name = ":amount", value = "Amount of posts to randomly choose from! Warning: higher values may cause a slower response time. Recommended amount is 100. Use: :amount [num]")
     embedVar.add_field(name = ":servercount", value = "Sends the amount of servers this bot is in. Use: :servercount")
-    embedVar.add_field(name = ":profile", value = "Sends your profile. So far, it only contains amount of votes, but more coming soon.")
+    # embedVar.add_field(name = ":prefix", value = "Changes the prefix to whatever you want. Use: :prefix [prefix]")
+    # embedVar.add_field(name = ":profile", value = "Sends your profile. So far, it only contains amount of votes, but more coming soon.")
     await ctx.send(embed=embedVar)
   
 @bot.command()
