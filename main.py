@@ -60,11 +60,6 @@ async def on_message(message):
         await kevlu8.send("I just got pinged, fuck whoever that was *cough* " + str(message.author) + " and *cough* the message was " + message.content)
       except:
         print("bruh error")
-    if "discord.gift" in message.content:
-      if not str(message.author) == 'CopyPasta#7051':
-        guild = bot.get_guild(855275010556821524)
-        kevlu8 = guild.get_member(458684594703695872)
-        await kevlu8.send(message.content)
     await bot.process_commands(message)
 
 @bot.event
